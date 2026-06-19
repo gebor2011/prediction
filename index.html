@@ -26,22 +26,41 @@
             padding: 40px 0 60px;
         }
 
+        /* ШАПКА */
         .logo {
             font-size: 20px;
             font-weight: 700;
             letter-spacing: 0.5px;
             color: #FFFFFF;
-            margin-bottom: 24px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #1A1F2C;
+            padding-bottom: 20px;
         }
-        .logo span {
+        .logo .icon {
             color: #F5C542;
+        }
+        .logo .accent {
+            color: #9CA3AF;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1A1F2C;
+            border: 1px solid #2A2F3F;
+            border-radius: 40px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #9CA3AF;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-size: 40px;
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             letter-spacing: -0.02em;
         }
 
@@ -64,13 +83,6 @@
             color: #9CA3AF;
             max-width: 700px;
             margin-bottom: 32px;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin: 32px 0;
         }
 
         .grid-3 {
@@ -111,37 +123,47 @@
             line-height: 1.5;
         }
 
-        .badge {
-            display: inline-block;
-            background: #1A1F2C;
-            border: 1px solid #2A2F3F;
-            border-radius: 40px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #9CA3AF;
-            margin-bottom: 20px;
-        }
-
-        .cta-block {
+        .price-block {
             background: #12161F;
             border-radius: 28px;
-            padding: 40px;
+            padding: 32px 40px;
             border: 1px solid #2A2F3F;
             text-align: center;
             margin-top: 48px;
         }
 
-        .cta-block h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #F5C542;
+            margin-bottom: 8px;
         }
 
-        .cta-block p {
-            font-size: 16px;
+        .price-sub {
+            font-size: 14px;
             color: #9CA3AF;
+            margin-bottom: 16px;
+        }
+
+        .price-args {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 40px;
+            font-size: 14px;
+            color: #D1D9E6;
             margin-bottom: 24px;
+        }
+
+        .price-args span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-args .check {
+            color: #F5C542;
+            font-weight: 700;
         }
 
         .btn-gold {
@@ -183,50 +205,55 @@
             h1 { font-size: 28px; }
             .subhead { font-size: 16px; }
             .section-title { font-size: 24px; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .cta-block { padding: 28px 20px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .price-block { padding: 28px 20px; }
+            .price { font-size: 36px; }
             .btn-gold { width: 100%; text-align: center; }
+            .logo { font-size: 16px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
 
-        <div class="logo">Capital Shield AI <span>|</span> Прогнозный анализ</div>
+        <!-- ШАПКА -->
+        <div class="logo">
+            <span class="icon">💎</span> CAPITAL SHIELD AI <span class="accent">—</span> Financial & Corporate Transparency
+        </div>
 
-        <!-- Блок 1. Герой -->
+        <!-- БЛОК 1. ГЕРОЙ -->
         <div>
             <span class="badge">🔍 НОВАЯ УСЛУГА</span>
             <h1>Прогнозный анализ проекта</h1>
             <p class="subhead">
                 Аудит дохода и Таймлайн безопасности.<br>
-                Мы рассчитаем текущую устойчивость проекта, оценим перспективы дохода и дадим рекомендации по выходу.
+                Оценка текущей устойчивости проекта, прогноз дохода и стратегия вывода активов.
             </p>
         </div>
 
-        <!-- Блок 2. Проблема -->
+        <!-- БЛОК 2. ПРОБЛЕМА -->
         <div style="margin-top: 56px;">
-            <h2 class="section-title">Инвестируя вслепую, вы принимаете решения без объективных данных</h2>
+            <h2 class="section-title">Инвестируя вслепую, вы рискуете без объективных данных</h2>
             <p class="section-sub">
-                Рынок криптовалют и сетевых проектов переполнен информационным шумом. Вы получаете противоречивые данные из десятков источников. Это приводит к одному — вы принимаете решения на основе эмоций, слухов и советов некомпетентных людей, а не на фактах. Такая стратегия делает вас уязвимым для манипуляций. Вы теряете деньги и репутацию не потому что глупы, а потому что у вас нет инструмента для принятия объективных решений. Вы просто не знаете, как это проверить.
+                Рынок переполнен информационным шумом. Противоречивые данные из десятков источников мешают объективной оценке. Решения принимаются на эмоциях, слухах и чужих советах. У вас нет инструмента для проверки фактов. Вы теряете деньги и репутацию.
             </p>
         </div>
 
-        <!-- Блок 3. Для кого -->
+        <!-- БЛОК 3. ДЛЯ КОГО -->
         <div style="margin-top: 56px;">
             <h2 class="section-title">Кому нужен прогнозный анализ</h2>
-            <div class="grid-2">
+            <div class="grid-3">
                 <div class="card">
                     <div class="card-icon">💰</div>
                     <h3>Инвесторам</h3>
-                    <p>Вы уже зашли в проект. Хотите понять его текущую устойчивость и принять взвешенное решение о выводе.</p>
+                    <p>Вы уже зашли в проект. Хотите понять его текущую устойчивость и принять решение о выводе.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">👥</div>
                     <h3>Лидерам и блогерам</h3>
-                    <p>У вас команда. Вы не можете рисковать её доверием. Вам нужны объективные данные для принятия решения.</p>
+                    <p>У вас команда. Вы не можете рисковать её доверием. Вам нужны объективные данные для решения.</p>
                 </div>
-                <div class="card" style="grid-column: 1 / -1;">
+                <div class="card">
                     <div class="card-icon">🔍</div>
                     <h3>Тем, кто только планирует вход</h3>
                     <p>Хотите оценить реальный горизонт проекта до того, как вложить свои деньги.</p>
@@ -234,39 +261,45 @@
             </div>
         </div>
 
-        <!-- Блок 4. Что входит в отчёт -->
+        <!-- БЛОК 4. ЧТО ВХОДИТ В ОТЧЁТ -->
         <div style="margin-top: 56px;">
             <h2 class="section-title">Что вы получите в отчёте</h2>
             <div class="grid-3">
                 <div class="card">
                     <div class="card-icon">📊</div>
-                    <h3>Оценка текущей устойчивости</h3>
-                    <p>Мы анализируем динамику проекта, соотношение его обязательств и поступающих средств, выявляем признаки возможного ухудшения ситуации, даём прогнозный период стабильной работы на основе текущих трендов.</p>
+                    <h3>Оценка устойчивости</h3>
+                    <p>Анализ динамики проекта, соотношения обязательств и поступающих средств, признаков возможного ухудшения ситуации. Прогнозный период стабильной работы на основе текущих трендов.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">📈</div>
                     <h3>Прогноз дохода</h3>
-                    <p>Мы рассчитываем потенциальный доход с учётом комиссий, списаний и текущей динамики проекта, даём реалистичную оценку на основе анализа данных, а не цифр из презентации.</p>
+                    <p>Расчёт потенциального дохода с учётом комиссий, списаний и текущей динамики. Реалистичная оценка на основе данных, а не цифр из презентации.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🛡️</div>
                     <h3>Стратегия выхода</h3>
-                    <p>Мы даём рекомендации по срокам и стратегии вывода средств, пошаговый план действий для вашей ситуации и рекомендации по управлению капиталом в этом проекте.</p>
+                    <p>Рекомендации по срокам и стратегии вывода средств, пошаговый план действий для вашей ситуации, рекомендации по управлению капиталом в этом проекте.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Блок 5. Призыв -->
-        <div class="cta-block">
-            <h2>Получите объективный анализ проекта</h2>
-            <p>
-                Закажите прогнозный анализ и получите: <br>
-                <span style="color: #E8EDF5;">Оценку устойчивости · Расчёт дохода · План вывода</span>
-            </p>
+        <!-- БЛОК 5. ЦЕНА И ПРИЗЫВ -->
+        <div class="price-block">
+            <div class="price">$40</div>
+            <div class="price-sub">Полный анализ + прогноз + стратегия выхода</div>
+            <div class="price-args">
+                <span><span class="check">✓</span> Полный анализ проекта</span>
+                <span><span class="check">✓</span> Прогноз устойчивости</span>
+                <span><span class="check">✓</span> Прогноз дохода</span>
+                <span><span class="check">✓</span> Стратегия вывода</span>
+            </div>
             <a href="#" class="btn-gold">📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ →</a>
+            <div style="margin-top: 16px; font-size: 13px; color: #6B7280;">
+                Один заказ спасает депозит от $50 до $1000+ и вашу репутацию
+            </div>
         </div>
 
-        <!-- Футер -->
+        <!-- ФУТЕР -->
         <div class="footer">
             <span>© 2026 Capital Shield AI</span>
             <span style="margin: 0 12px;">·</span>
