@@ -1,452 +1,223 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прогнозный анализ — Capital Shield AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- БАННЕР CAPITAL SHIELD AI — ЧАСТЬ 1 -->
+<div id="cs-isolated-hero">
+  <style>
+    #cs-isolated-hero {
+      position: relative !important;
+      width: 100% !important;
+      min-height: 380px !important;
+      background: radial-gradient(circle at 85% 50%, #0c1020 0%, #050508 100%) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      overflow: hidden !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+      border-bottom: 2px solid #1a1a24 !important;
+      box-sizing: border-box !important;
+      padding: 30px 40px !important;
+      margin: 0 0 40px 0 !important;
+      z-index: 99999 !important;
+    }
+    #cs-isolated-hero::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+      background-image: 
+        linear-gradient(rgba(0, 123, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 123, 255, 0.04) 1px, transparent 1px) !important;
+      background-size: 25px 25px !important;
+      pointer-events: none !important;
+      z-index: 1 !important;
+    }
+    #cs-isolated-hero .cs-text-side {
+      position: relative !important;
+      z-index: 3 !important;
+      max-width: 60% !important;
+      text-align: left !important;
+    }
+    #cs-isolated-hero .cs-brand-tag {
+      font-size: 13px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 5px !important;
+      color: #007bff !important;
+      font-weight: 800 !important;
+      margin-bottom: 12px !important;
+      text-shadow: 0 0 15px rgba(0, 123, 255, 0.5) !important;
+    }
+    #cs-isolated-hero .cs-main-title {
+      font-size: 38px !important;
+      font-weight: 800 !important;
+      color: #ffc107 !important;
+      line-height: 1.2 !important;
+      margin: 0 0 15px 0 !important;
+      text-shadow: 0 0 20px rgba(255, 193, 7, 0.2) !important;
+    }
+    #cs-isolated-hero .cs-main-title span {
+      color: #ffffff !important;
+      font-size: 28px !important;
+      font-weight: 700 !important;
+      display: block !important;
+      margin-top: 4px !important;
+      text-shadow: none !important;
+    }
+    #cs-isolated-hero .cs-subtitle {
+      font-size: 15px !important;
+      color: #a0a0b0 !important;
+      line-height: 1.4 !important;
+      margin: 0 0 25px 0 !important;
+    }
+    #cs-isolated-hero .cs-badges-row {
+      display: flex !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+    #cs-isolated-hero .cs-badge {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      padding: 6px 12px !important;
+      border-radius: 4px !important;
+      font-size: 10px !important;
+      color: #d1d1d6 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+      font-weight: 600 !important;
+      display: inline-block !important;
+    }
+    #cs-isolated-hero .cs-badge.cs-price {
+      border-color: rgba(255, 193, 7, 0.4) !important;
+      background: rgba(255, 193, 7, 0.05) !important;
+      color: #ffc107 !important;
+    }
+      <!-- БАННЕР CAPITAL SHIELD AI — ЧАСТЬ 2 -->
+    #cs-isolated-hero .cs-graphics-side {
+      position: relative !important;
+      z-index: 2 !important;
+      width: 260px !important;
+      height: 260px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    #cs-isolated-hero .cs-shield-glow {
+      position: absolute !important;
+      width: 140px !important;
+      height: 140px !important;
+      background: #0056b3 !important;
+      border-radius: 50% !important;
+      filter: blur(50px) !important;
+      opacity: 0.4 !important;
+      animation: csPulseGlow 4s infinite ease-in-out !important;
+    }
+    #cs-isolated-hero .cs-radar-circle {
+      position: absolute !important;
+      width: 100% !important;
+      height: 100% !important;
+      border: 1px dashed rgba(0, 123, 255, 0.25) !important;
+      border-radius: 50% !important;
+      animation: csRotateRadar 20s linear infinite !important;
+      box-sizing: border-box !important;
+    }
+    #cs-isolated-hero .cs-radar-circle::after {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important; left: 50% !important;
+      width: 50% !important; height: 50% !important;
+      background: conic-gradient(from 0deg, rgba(0, 123, 255, 0.15) 0%, transparent 70%) !important;
+      transform-origin: left bottom !important;
+      border-radius: 0 100% 0 0 !important;
+    }
+    #cs-isolated-hero .cs-cyber-shield {
+      position: relative !important;
+      width: 90px !important;
+      height: 105px !important;
+      background: #0d0d13 !important;
+      border: 2px solid #007bff !important;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4), inset 0 0 10px rgba(0, 123, 255, 0.2) !important;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 2 !important;
+    }
+    #cs-isolated-hero .cs-cyber-shield::before {
+      content: '' !important;
+      position: absolute !important;
+      width: 100% !important;
+      height: 3px !important;
+      background: linear-gradient(to right, transparent, #ffc107, transparent) !important;
+      box-shadow: 0 0 8px #ffc107 !important;
+      animation: csScanLine 2.5s infinite linear !important;
+    }
+    #cs-isolated-hero .cs-shield-logo {
+      font-size: 22px !important;
+      font-weight: 900 !important;
+      color: #ffffff !important;
+      letter-spacing: -1px !important;
+    }
+    #cs-isolated-hero .cs-shield-status {
+      font-size: 8px !important;
+      color: #007bff !important;
+      text-transform: uppercase !important;
+      letter-spacing: 2px !important;
+      margin-top: 3px !important;
+      font-weight: bold !important;
+    }
+    @keyframes csRotateRadar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes csScanLine {
+      0% { top: 0%; }
+      50% { top: 95%; }
+      100% { top: 0%; }
+    }
+    @keyframes csPulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.5; }
+    }
+    @media (max-width: 768px) {
+      #cs-isolated-hero {
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 30px 20px !important;
+        gap: 30px !important;
+      }
+      #cs-isolated-hero .cs-text-side {
+        max-width: 100% !important;
+        text-align: center !important;
+      }
+      #cs-isolated-hero .cs-main-title { font-size: 28px !important; }
+      #cs-isolated-hero .cs-main-title span { font-size: 22px !important; }
+      #cs-isolated-hero .cs-badges-row { justify-content: center !important; }
+      #cs-isolated-hero .cs-graphics-side { width: 180px !important; height: 180px !important; }
+    }
+  </style>
 
-        body {
-              
-</section>
-            background: #0B0E17;
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-            color: #E8EDF5;
-            line-height: 1.5;
-            padding: 0 16px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 0 60px;
-        }
-
-        /* ШАПКА */
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #FFFFFF;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #1A1F2C;
-            padding-bottom: 20px;
-        }
-        .logo .icon {
-            color: #F5C542;
-        }
-        .logo .accent {
-            color: #9CA3AF;
-            font-weight: 400;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #1A1F2C;
-            border: 1px solid #2A2F3F;
-            border-radius: 40px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #9CA3AF;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 40px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .subhead {
-            font-size: 18px;
-            color: #9CA3AF;
-            max-width: 700px;
-            line-height: 1.6;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.01em;
-        }
-
-        .section-sub {
-            font-size: 16px;
-            color: #9CA3AF;
-            max-width: 700px;
-            margin-bottom: 32px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .card {
-            background: #12161F;
-            border-radius: 20px;
-            padding: 28px 24px;
-            border: 1px solid #2A2F3F;
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            border-color: #F5C542;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(245,197,66,0.05);
-        }
-
-        .card-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #9CA3AF;
-            line-height: 1.5;
-        }
-
-        .price-block {
-            background: #12161F;
-            border-radius: 28px;
-            padding: 32px 40px;
-            border: 1px solid #2A2F3F;
-            text-align: center;
-            margin-top: 48px;
-        }
-
-        .price {
-            font-size: 48px;
-            font-weight: 800;
-            color: #F5C542;
-            margin-bottom: 8px;
-        }
-
-        .price-sub {
-            font-size: 14px;
-            color: #9CA3AF;
-            margin-bottom: 16px;
-        }
-
-        .price-args {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px 40px;
-            font-size: 14px;
-            color: #D1D9E6;
-            margin-bottom: 24px;
-        }
-
-        .price-args span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .price-args .check {
-            color: #F5C542;
-            font-weight: 700;
-        }
-
-        .btn-gold {
-            display: inline-block;
-            background: #F5C542;
-            color: #0B0E17;
-            font-weight: 700;
-            font-size: 18px;
-            padding: 14px 40px;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .btn-gold:hover {
-            background: #E0B030;
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(245,197,66,0.2);
-        }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 13px;
-            color: #6B7280;
-            border-top: 1px solid #1A1F2C;
-            padding-top: 24px;
-            text-align: center;
-        }
-
-        .footer a {
-            color: #8E96A7;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: #FFFFFF;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 28px; }
-            .subhead { font-size: 16px; }
-            .section-title { font-size: 24px; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .price-block { padding: 28px 20px; }
-            .price { font-size: 36px; }
-            .btn-gold { width: 100%; text-align: center; }
-            .logo { font-size: 16px; }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-
-        <!-- ШАПКА -->
-        <div class="logo">
-            <span class="icon">💎</span> CAPITAL SHIELD AI <span class="accent">—</span> Financial & Corporate Transparency
-        </div>
-
-        <!-- БЛОК 1. ГЕРОЙ -->
-        <div>
-            <span class="badge">🔍 НОВАЯ УСЛУГА</span>
-            <h1>Прогнозный анализ + Полная проверка проекта по 14 модулям безопасности: узнайте точный срок жизни проекта, прежде чем он закроется вместе с вашими деньгами.</h1>
-            <div style="font-size: 20px; font-weight: 600; color: #F5C542; margin-bottom: 8px;">«Узнайте, сколько вам осталось заработать и когда выходить»</div>
-            <p class="subhead">
-                Защитите свой капитал и репутацию. Наш алгоритм проводит глубокое исследование любой инвестиционной платформы и рассчитывает «Таймлайн безопасности» — математически обоснованную дату, когда нужно экстренно забрать депозит.
-            </p>
-        </div>
-
-        <!-- БЛОК 2. ПОЧЕМУ КЛАССИЧЕСКИЙ АУДИТ БЕСПОЛЕЗЕН -->
-        <div style="margin-top: 56px;">
-            <h2 class="section-title">Почему классический аудит бесполезен и зачем нужен прогноз?</h2>
-            <p class="section-sub">
-                Обычные технические проверки ищут уязвимости в коде. Но они молчат о главном. Проект может иметь идеальный код, одобренный топовыми агентствами, но при этом быть скрытой финансовой пирамидой, идущей к неизбежному кассовому разрыву.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
-                <div style="background: #12161F; border-radius: 16px; padding: 20px 24px; border-left: 3px solid #F5C542;">
-                    <strong style="color: #F5C542;">Точный Таймлайн безопасности:</strong>
-                    <span style="color: #D1D9E6; display: block; margin-top: 4px;">ИИ моделирует 3 сценария поведения кассы (оптимистичный, реалистичный и стрессовый) и вычисляет конкретный коридор дней, в течение которого платформа физически способна выполнять обязательства. Вы будете знать, успеет ли ваш депозит отбиться.</span>
-                </div>
-                <div style="background: #12161F; border-radius: 16px; padding: 20px 24px; border-left: 3px solid #F5C542;">
-                    <strong style="color: #F5C542;">Очищенный расчет доходности:</strong>
-                    <span style="color: #D1D9E6; display: block; margin-top: 4px;">Алгоритм находит скрытые в смарт-контракте или оферте админские комиссии и списания. Вы увидите свою реальную чистую прибыль, а не рисованные цифры в личном кабинете.</span>
-                </div>
-                <div style="background: #12161F; border-radius: 16px; padding: 20px 24px; border-left: 3px solid #F5C542;">
-                    <strong style="color: #F5C542;">Пошаговая стратегия выхода:</strong>
-                    <span style="color: #D1D9E6; display: block; margin-top: 4px;">Четкий план действий, разработанный под ваш баланс — когда начинать вывод прибыли, в какой день забирать тело депозита и при каких ончейн-маркерах нужно немедленно эвакуировать капитал и мн. др.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- БЛОК 3. ЧТО ДАЁТ ПРОГНОЗНЫЙ АНАЛИЗ -->
-        <div style="margin-top: 56px;">
-            <h2 class="section-title">Вы получите ответы на три главных вопроса</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Оценка устойчивости</h3>
-                    <p>Анализ динамики проекта, соотношения обязательств и поступающих средств, признаков возможного ухудшения ситуации. Прогнозный период стабильной работы.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📈</div>
-                    <h3>Прогноз дохода</h3>
-                    <p>Расчёт потенциального дохода с учётом комиссий, списаний и текущей динамики. Реалистичная оценка, а не цифры из презентации.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Стратегия выхода</h3>
-                    <p>Рекомендации по срокам и стратегии вывода средств. Пошаговый план действий для вашей ситуации.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- БЛОК 4. ОСНОВНАЯ ПРОВЕРКА -->
-        <div style="margin-top: 56px;">
-            <h2 class="section-title">Полная проверка по 14 модулям безопасности — входит в стоимость</h2>
-            <p class="section-sub">
-                Прогнозный анализ невозможен без глубокого исследования проекта. Поэтому в отчёт входит полная проверка по 14 модулям: OSINT, юридика, математика, технический аудит, денежный след и другие. Вы получаете не просто прогноз, а полную картину проекта.
-            </p>
-        </div>
-
-        <!-- БЛОК 5. ЦЕНА И ПРИЗЫВ -->
-        <div class="price-block">
-            <div class="price">$40</div>
-            <div class="price-sub">Полный анализ + прогнозный анализ + стратегия выхода</div>
-            <div class="price-args">
-                <span><span class="check">✓</span> Один отчёт спасает депозит от $50 до $1000+</span>
-                <span><span class="check">✓</span> Сохраняет репутацию перед командой</span>
-                <span><span class="check">✓</span> Даёт готовый план выхода, а не гадание</span>
-            </div>
-            <a href="https://forms.gle/ELAhBWQip1GaCh1x8" target="_blank" class="btn-gold">📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ →</a>
-            <div style="margin-top: 16px; font-size: 13px; color: #6B7280;">
-                Это дешевле, чем потерять всё.
-            </div>
-        </div>
-<!-- Стильный и солидный блок формы заказа Capital Shield AI -->
-<style>
-  .shield-order-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #161616;
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  }
-  .shield-order-form h3 {
-    text-align: center;
-    margin-top: 0;
-    color: #ffffff;
-    font-size: 22px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-  }
-  .form-notice {
-    font-size: 13px;
-    color: #888;
-    text-align: center;
-    margin-bottom: 25px;
-    line-height: 1.4;
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #cccccc;
-    font-weight: bold;
-  }
-  .form-group input, .form-group textarea, .form-group select {
-    width: 100%;
-    padding: 12px;
-    background: #0d0d0d;
-    border: 1px solid #333;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-  .form-group input:focus, .form-group textarea:focus {
-    border-color: #0056b3;
-    outline: none;
-  }
-  .submit-btn {
-    width: 100%;
-    padding: 15px;
-    background: #0056b3;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .submit-btn:hover {
-    background: #004085;
-  }
-</style>
-
-<div class="shield-order-form">
-  <h3>📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ</h3>
-  <div class="form-notice">
-    Заполните данные для запуска Алгоритма 6.0.<br>
-    Стоимость услуги — <strong>$40</strong>. Отчёт будет направлен вам в PDF.
+  <!-- Текстовый блок баннера -->
+  <div class="cs-text-side">
+    <div class="cs-brand-tag">Capital Shield AI</div>
+    <h2 class="cs-main-title">
+      Прогнозный анализ
+      <span>+ Полный ИИ-аудит</span>
+    </h2>
+    <p class="cs-subtitle">
+      Узнайте точный срок стабильной работы проекта по Алгоритму 6.0, прежде чем он закроется вместе с вашими деньгами.
+    </p>
+    <div class="cs-badges-row">
+      <div class="cs-badge">🔒 Алгоритм 6.0</div>
+      <div class="cs-badge">🔮 Модуль 15</div>
+      <div class="cs-badge cs-price">📊 Всего $40</div>
+    </div>
   </div>
-  
-  <!-- Ваша личная ссылка интеграции вставлена сюда -->
-  <form action="https://formspree.io/f/xlgkqkbb" method="POST">
-    
-    <div class="form-group">
-      <label>1. Название проекта *</label>
-      <input type="text" name="project_name" required placeholder="Введите название инвестиционной платформы">
-    </div>
-    
-    <div class="form-group">
-      <label>2. Ссылка на сайт проекта *</label>
-      <input type="url" name="project_website" required placeholder="https://...">
-    </div>
-    
-    <div class="form-group">
-      <label>3. Ссылка на Telegram-чат/канал проекта *</label>
-      <input type="text" name="project_tg_link" required placeholder="https://t.me...">
-    </div>
-    
-    <div class="form-group">
-      <label>4. Сумма вашего депозита (в USD) *</label>
-      <input type="number" name="deposit_amount" required placeholder="Например: 500">
-    </div>
-    
-    <div class="form-group">
-      <label>5. Обещанная доходность (%) *</label>
-      <input type="text" name="promised_yield" required placeholder="Например: 1% в день / 20% в месяц">
-    </div>
-    
-    <div class="form-group">
-      <label>6. Сколько времени проект уже работает? *</label>
-      <input type="text" name="project_age_by_user" required placeholder="Например: неделю, 3 месяца, только предстарт">
-    </div>
-    
-    <div class="form-group">
-      <label>7. Адрес смарт-контракта (если есть / опционально)</label>
-      <input type="text" name="smart_contract_address" placeholder="0x...">
-    </div>
-    
-    <div class="form-group">
-      <label>8. Ссылка на презентацию / Whitepaper (если есть)</label>
-      <input type="text" name="whitepaper_link" placeholder="Ссылка на PDF или презентацию">
-    </div>
-    
-    <div class="form-group">
-      <label>9. Что именно вызывает у вас сомнения в проекте? *</label>
-      <textarea name="user_doubts" rows="3" required placeholder="Например: задержки выплат, слишком высокие проценты, админы молчат"></textarea>
-    </div>
-    
-    <div class="form-group">
-      <label>10. Ваш личный Telegram для связи и отправки отчёта *</label>
-      <input type="text" name="client_telegram" required placeholder="Например: @mihalych_crypto">
-    </div>
-    
-    <div class="form-group">
-      <label>11. Ваш Email для связи *</label>
-      <input type="email" name="client_email" required placeholder="mail@example.com">
-    </div>
-    
-    <button type="submit" class="submit-btn">Запустить прогнозный анализ капитала</button>
-  </form>
-</div>
-        <!-- ФУТЕР -->
-        <div class="footer">
-            <span>© 2026 Capital Shield AI</span>
-            <span style="margin: 0 12px;">·</span>
-            <span>Прогнозный анализ проекта</span>
-            <span style="margin: 0 12px;">·</span>
-            <a href="https://t.me/capitalshield_ai" target="_blank">Telegram</a>
-        </div>
 
+  <!-- Графический блок баннера -->
+  <div class="cs-graphics-side">
+    <div class="cs-shield-glow"></div>
+    <div class="cs-radar-circle"></div>
+    <div class="cs-cyber-shield">
+      <div class="cs-shield-logo">CS</div>
+      <div class="cs-shield-status">ИИ-Поиск</div>
     </div>
-</body>
-</html>
+  </div>
+</div>
