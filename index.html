@@ -3,211 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прогнозный анализ проекта — Capital Shield AI</title>
+    <title>Прогнозный анализ — Capital Shield AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            background: #0B0E17;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color: #E8EDF5;
+            line-height: 1.5;
+            padding: 0 16px;
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
-            text-align: center;
+            padding: 40px 0 60px;
         }
-        h1, h2, h3 {
-            color: #ffcc00;
+
+        /* ШАПКА */
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #1A1F2C;
+            padding-bottom: 20px;
         }
-        .btn {
+        .logo .icon {
+            color: #F5C542;
+        }
+        .logo .accent {
+            color: #9CA3AF;
+            font-weight: 400;
+        }
+
+        .badge {
             display: inline-block;
-            background-color: #ffcc00;
-            color: #000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
-        .btn:hover {
-            background-color: #e6b800;
-        }
-        .shield-order-form {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #161616;
-            border: 1px solid #2a2a2a;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            box-sizing: border-box;
-        }
-        <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 2 -->
-        .shield-order-form h3 {
-            text-align: center;
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-        .form-notice {
+            background: #1A1F2C;
+            border: 1px solid #2A2F3F;
+            border-radius: 40px;
+            padding: 6px 16px;
             font-size: 13px;
-            color: #888;
-            text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-        .form-group {
+            font-weight: 500;
+            color: #9CA3AF;
             margin-bottom: 20px;
-            text-align: left;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #cccccc;
-            font-weight: bold;
+
+        h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: #0d0d0d;
-            border: 1px solid #333;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 14px;
-            box-sizing: border-box;
+
+        .subhead {
+            font-size: 18px;
+            color: #9CA3AF;
+            max-width: 700px;
+            line-height: 1.6;
         }
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #ffcc00;
-            outline: none;
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
         }
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: #ffcc00;
-            border: none;
-            border-radius: 4px;
-            color: #000000;
+
+        .section-sub {
             font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.2s;
+            color: #9CA3AF;
+            max-width: 700px;
+            margin-bottom: 32px;
         }
-        .submit-btn:hover {
-            background-color: #e6b800;
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .card {
+            background: #12161F;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid #2A2F3F;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: #F5C542;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(245,197,66,0.05);
+        }
+
+        .card-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #9CA3AF;
+            line-height: 1.5;
+        }
+
+        .price-block {
+            background: #12161F;
+            border-radius: 28px;
+            padding: 32px 40px;
+            border: 1px solid #2A2F3F;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #F5C542;
+            margin-bottom: 8px;
+        }
+
+        .price-sub {
+            font-size: 14px;
+            color: #9CA3AF;
+            margin-bottom: 16px;
+        }
+
+        .price-args {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 40px;
+            font-size: 14px;
+            color: #D1D9E6;
+            margin-bottom: 24px;
+        }
+
+        .price-args span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-args .check {
+            color: #F5C542;
+            font-weight: 700;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: #F5C542;
+            color: #0B0E17;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 14px 40px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-gold:hover {
+            background: #E0B030;
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(245,197,66,0.2);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #6B7280;
+            border-top: 1px solid #1A1F2C;
+            padding-top: 24px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #8E96A7;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .subhead { font-size: 16px; }
+            .section-title { font-size: 24px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .price-block { padding: 28px 20px; }
+            .price { font-size: 36px; }
+            .btn-gold { width: 100%; text-align: center; }
+            .logo { font-size: 16px; }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <header style="margin-bottom: 40px;">
-            <h1>Прогнозный анализ проекта — Capital Shield AI</h1>
-        </header>
-        <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 3 -->
-        <section>
-            <h2>Прогнозный анализ + Полная проверка по 14 модулям безопасности</h2>
-            <p>Узнайте точный срок стабильной работы проекта, прежде чем он закроется вместе с вашими деньгами. Полная проверка по 14 модулям безопасности уже входит в стоимость!</p>
-            <p><strong>Слоган:</strong> «Узнайте, сколько вам осталось заработать и когда выходить»</p>
-            <p><strong>Фиксированная цена:</strong> $40</p>
-        </section>
 
-        <section style="margin-top: 40px;">
-            <h2>Почему классический аудит бесполезен и зачем нужен прогноз?</h2>
-            <p>Обычные технические проверки ищут уязвимости в коде. Но они молчат о главном. Проект может иметь идеальный код, одобренный топовыми агентствами, но при этом быть скрытой финансовой пирамидой, идущей к неизбежному кассовому разрыву.</p>
-            
-            <div style="background: #1e1e1e; padding: 20px; border-radius: 5px; margin-top: 20px; text-align: left;">
-                <p><strong>Что дает Прогнозный анализ от Capital Shield AI:</strong></p>
-                <ul>
-                    <li style="margin-bottom: 10px;"><strong>Оценка текущей устойчивости проекта:</strong> Расчет запаса прочности платформы на основе реальных ончейн-трендов.</li>
-                    <li style="margin-bottom: 10px;"><strong>Прогноз потенциального дохода:</strong> Чистый расчет вашей прибыли с учетом скрытых комиссий, списаний и текущей динамики.</li>
-                    <li><strong>Стратегия вывода средств:</strong> Рекомендации по срокам и пошаговый план действий для вашей безопасности.</li>
-                </ul>
-            </div>
-            <p style="margin-top: 20px; font-weight: bold; color: #ffcc00;">Один заказ спасает депозит от $50 до $1000+</p>
-        </section>
-        <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 4 -->
-        <!-- Форма заказа, подключенная к вашему Formspree -->
-        <div class="shield-order-form" style="margin-top: 50px;">
-            <h3>📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ</h3>
-            <div class="form-notice">
-                Заполните данные для запуска Алгоритма 6.0.<br>
-                Стоимость услуги — <strong>$40</strong>. Отчёт будет направлен вам в PDF.
-            </div>
-            
-            <form action="https://formspree.io" method="POST">
-                
-                <div class="form-group">
-                    <label>1. Название проекта *</label>
-                    <input type="text" name="project_name" required placeholder="Введите название инвестиционной платформы">
-                </div>
-                
-                <div class="form-group">
-                    <label>2. Ссылка на сайт проекта *</label>
-                    <input type="url" name="project_website" required placeholder="https://...">
-                </div>
-                
-                <div class="form-group">
-                    <label>3. Ссылка на Telegram-чат/канал проекта *</label>
-                    <input type="text" name="project_tg_link" required placeholder="https://t.me...">
-                </div>
-                
-                <div class="form-group">
-                    <label>4. Сумма вашего депозита (в USD) *</label>
-                    <input type="number" name="deposit_amount" required placeholder="Например: 500">
-                </div>
-                
-                <div class="form-group">
-                    <label>5. Обещанная доходность (%) *</label>
-                    <input type="text" name="promised_yield" required placeholder="Например: 1% в день / 20% в месяц">
-                </div>
-                <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 5 -->
-                <div class="form-group">
-                    <label>6. Сколько времени проект уже работает? *</label>
-                    <input type="text" name="project_age_by_user" required placeholder="Например: неделю, 3 месяца, только предстарт">
-                </div>
-                
-                <div class="form-group">
-                    <label>7. Адрес смарт-контракта (если есть / опционально)</label>
-                    <input type="text" name="smart_contract_address" placeholder="0x...">
-                </div>
-                
-                <div class="form-group">
-                    <label>8. Ссылка на презентацию / Whitepaper (если есть)</label>
-                    <input type="text" name="whitepaper_link" placeholder="Ссылка на PDF или презентацию">
-                </div>
-                
-                <div class="form-group">
-                    <label>9. Что именно вызывает у вас сомнения в проекте? *</label>
-                    <textarea name="user_doubts" rows="3" required placeholder="Например: задержки выплат, слишком высокие проценты, админы молчат"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>10. Ваш личный Telegram для связи и отправки отчёта *</label>
-                    <input type="text" name="client_telegram" required placeholder="Например: @username_crypto">
-                </div>
-                
-                <div class="form-group">
-                    <label>11. Ваш Email для связи *</label>
-                    <input type="email" name="client_email" required placeholder="mail@example.com">
-                </div>
-                
-                <button type="submit" class="submit-btn">Запустить прогнозный анализ капитала</button>
-            </form>
+        <!-- ШАПКА -->
+        <div class="logo">
+            <span class="icon">💎</span> CAPITAL SHIELD AI <span class="accent">—</span> Financial & Corporate Transparency
         </div>
 
-        <footer style="margin-top: 50px; padding: 20px 0; border-top: 1px solid #222; text-align: center; color: #666; font-size: 14px;">
-            <p>Официальный канал: <a href="https://t.me" style="color: #007bff; text-decoration: none;">t.me/capitalshield_ai</a></p>
-        </footer>
+        <!-- БЛОК 1. ГЕРОЙ -->
+        <div>
+            <span class="badge">🔍 НОВАЯ УСЛУГА</span>
+            <h1>Прогнозный анализ + Полная проверка проекта по 14 модулям безопасности: узнайте точный срок жизни проекта, прежде чем он закроется вместе с вашими деньгами.</h1>
+            <div style="font-size: 20px; font-weight: 600; color: #F5C542; margin-bottom: 8px;">«Узнайте, сколько вам осталось заработать и когда выходить»</div>
+            <p class="subhead">
+                Защитите свой капитал и репутацию. Наш алгоритм проводит глубокое исследование любой инвестиционной платформы и рассчитывает «Таймлайн безопасности» — математически обоснованную дату, когда нужно экстренно забрать депозит.
+            </p>
+        </div>
 
-    </div> <!-- Конец .container -->
+        <!-- БЛОК 2. ПОЧЕМУ КЛАССИЧЕСКИЙ АУДИТ БЕСПОЛЕЗЕН -->
+        <div style="margin-top: 56px;">
+            <h2 class="section-title">Почему классический аудит бесполезен и зачем нужен прогноз?</h2>
+            <p class="section-sub">
+                Обычные технические проверки ищут уязвимости в коде. Но они молчат о главном. Проект может иметь идеальный код, одобренный топовыми агентствами, но при этом быть скрытой финансовой пирамидой, идущей к неизбежному кассовому разрыву.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                <div style="background: #12161F; border-radius: 16px; padding: 20px 24px; border-left: 3px solid #F5C542;">
+                    <strong style="color: #F5C542;">Точный Таймлайн безопасности:</strong>
+                    <span style="color: #D1D9E6; display: block; margin-top: 4px;">ИИ моделирует 3 сценария поведения кассы (оптимистичный, реалистичный и стрессовый) и вычисляет конкретный коридор дней, в течение которого платформа физически способна выполнять обязательства. Вы будете знать, успеет ли ваш депозит отбиться.</span>
+                </div>
+                <div style="background: #12161F; border-radius: 16px; padding: 20px 24px; border-left: 3px solid #F5C542;">
+                    <strong style="color: #F5C542;">Очищенный расчет доходности:</strong>
+                    <span style="color: #D1D9E6; display: block; margin-top: 4px;">Алгоритм находит скрытые в смарт-контракте или оферте админские комиссии и списания. Вы увидите свою реальную чистую прибыль, а не рисованные цифры в личном кабинете.</span>
+                </div>
+                <div style="background: #12161F; border-radius: 16px; padding: 20px 24px; border-left: 3px solid #F5C542;">
+                    <strong style="color: #F5C542;">Пошаговая стратегия выхода:</strong>
+                    <span style="color: #D1D9E6; display: block; margin-top: 4px;">Четкий план действий, разработанный под ваш баланс — когда начинать вывод прибыли, в какой день забирать тело депозита и при каких ончейн-маркерах нужно немедленно эвакуировать капитал и мн. др.</span>
+                </div>
+            </div>
+        </div>
 
+        <!-- БЛОК 3. ЧТО ДАЁТ ПРОГНОЗНЫЙ АНАЛИЗ -->
+        <div style="margin-top: 56px;">
+            <h2 class="section-title">Вы получите ответы на три главных вопроса</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Оценка устойчивости</h3>
+                    <p>Анализ динамики проекта, соотношения обязательств и поступающих средств, признаков возможного ухудшения ситуации. Прогнозный период стабильной работы.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Прогноз дохода</h3>
+                    <p>Расчёт потенциального дохода с учётом комиссий, списаний и текущей динамики. Реалистичная оценка, а не цифры из презентации.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Стратегия выхода</h3>
+                    <p>Рекомендации по срокам и стратегии вывода средств. Пошаговый план действий для вашей ситуации.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 4. ОСНОВНАЯ ПРОВЕРКА -->
+        <div style="margin-top: 56px;">
+            <h2 class="section-title">Полная проверка по 14 модулям — входит в стоимость</h2>
+            <p class="section-sub">
+                Прогнозный анализ невозможен без глубокого исследования проекта. Поэтому в отчёт входит полная проверка по 14 модулям: OSINT, юридика, математика, технический аудит, денежный след и другие. Вы получаете не просто прогноз, а полную картину проекта.
+            </p>
+        </div>
+
+        <!-- БЛОК 5. ЦЕНА И ПРИЗЫВ -->
+        <div class="price-block">
+            <div class="price">$40</div>
+            <div class="price-sub">Полный анализ + прогноз + стратегия выхода</div>
+            <div class="price-args">
+                <span><span class="check">✓</span> Один отчёт спасает депозит от $50 до $1000+</span>
+                <span><span class="check">✓</span> Сохраняет репутацию перед командой</span>
+                <span><span class="check">✓</span> Даёт готовый план выхода, а не гадание</span>
+            </div>
+            <a href="https://forms.gle/ELAhBWQip1GaCh1x8" target="_blank" class="btn-gold">📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ →</a>
+            <div style="margin-top: 16px; font-size: 13px; color: #6B7280;">
+                Это дешевле, чем потерять всё.
+            </div>
+        </div>
+
+        <!-- ФУТЕР -->
+        <div class="footer">
+            <span>© 2026 Capital Shield AI</span>
+            <span style="margin: 0 12px;">·</span>
+            <span>Прогнозный анализ проекта</span>
+            <span style="margin: 0 12px;">·</span>
+            <a href="https://t.me/capitalshield_ai" target="_blank">Telegram</a>
+        </div>
+
+    </div>
 </body>
 </html>
