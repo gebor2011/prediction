@@ -308,5 +308,135 @@
         </div>
 
     </div>
+    <!-- ОЧИЩЕННАЯ ФОРМА CAPITAL SHIELD AI — ЧАСТЬ 1 -->
+<style>
+  .cs-custom-form-block {
+    max-width: 600px !important;
+    margin: 40px auto !important;
+    padding: 25px !important;
+    background: #161616 !important;
+    border: 1px solid #2a2a2a !important;
+    border-radius: 6px !important;
+    font-family: Arial, sans-serif !important;
+    color: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+  .cs-custom-form-block h3 {
+    text-align: center !important;
+    margin: 0 0 5px 0 !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+  }
+  .cs-custom-form-block .cs-notice {
+    font-size: 13px !important;
+    color: #888 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+  .cs-custom-form-block .cs-group {
+    margin-bottom: 15px !important;
+    text-align: left !important;
+  }
+  .cs-custom-form-block label {
+    display: block !important;
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+    color: #ccc !important;
+    font-weight: bold !important;
+  }
+  .cs-custom-form-block input, .cs-custom-form-block textarea {
+    width: 100% !important;
+    padding: 10px !important;
+    background: #0d0d0d !important;
+    border: 1px solid #333 !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    box-sizing: border-box !important;
+  }
+  .cs-custom-form-block input:focus, .cs-custom-form-block textarea:focus {
+    border-color: #ffcc00 !important;
+    outline: none !important;
+  }
+  .cs-custom-form-block .cs-btn {
+    width: 100 !important;
+    padding: 12px !important;
+    background: #ffcc00 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    color: #000 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+  }
+</style>
+
+<div class="cs-custom-form-block">
+  <h3>📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ</h3>
+  <div class="cs-notice">Стоимость услуги — $40. Отчёт будет направлен в PDF.</div>
+  
+  <form action="https://formspree.io" method="POST">
+    
+    <div class="cs-group">
+      <label>1. Название проекта *</label>
+      <input type="text" name="project_name" required>
+    </div>
+    
+    <div class="cs-group">
+      <label>2. Ссылка на сайт проекта *</label>
+      <input type="url" name="project_website" required>
+    </div>
+    
+    <div class="cs-group">
+      <label>3. Ссылка на Telegram-чат/канал проекта *</label>
+      <input type="text" name="project_tg_link" required>
+    </div>
+    
+    <div class="cs-group">
+      <label>4. Сумма вашего депозита (в USD) *</label>
+      <input type="number" name="deposit_amount" required>
+    </div>
+    
+    <div class="cs-group">
+      <label>5. Обещанная доходность (%) *</label>
+      <input type="text" name="promised_yield" required>
+    </div>
+      <!-- ОЧИЩЕННАЯ ФОРМА CAPITAL SHIELD AI — ЧАСТЬ 2 -->
+    <div class="cs-group">
+      <label>6. Сколько времени проект уже работает? *</label>
+      <input type="text" name="project_age_by_user" required>
+    </div>
+    
+    <div class="cs-group">
+      <label>7. Адрес смарт-контракта (если есть / опционально)</label>
+      <input type="text" name="smart_contract_address">
+    </div>
+    
+    <div class="cs-group">
+      <label>8. Ссылка на презентацию / Whitepaper (если есть)</label>
+      <input type="text" name="whitepaper_link">
+    </div>
+    
+    <div class="cs-group">
+      <label>9. Что именно вызывает у вас сомнения в проекте? *</label>
+      <textarea name="user_doubts" rows="3" required></textarea>
+    </div>
+    
+    <div class="cs-group">
+      <label>10. Ваш личный Telegram для связи и отправки отчёта *</label>
+      <input type="text" name="client_telegram" required>
+    </div>
+    
+    <div class="cs-group">
+      <label>11. Ваш Email для связи *</label>
+      <input type="email" name="client_email" required>
+    </div>
+    
+    <button type="submit" class="cs-btn">Запустить прогнозный анализ капитала</button>
+  </form>
+</div>
 </body>
 </html>
