@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capital Shield AI - Квадратный Баннер</title>
+  <style>
+    /* Фиксируем строго квадратные пропорции 1:1 */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #050508;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
 
+    /* Главный квадратный контейнер */
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 40px 30px 30px 30px;
+      background: radial-gradient(circle at center, #0c1020 0%, #050508 100%);
+      text-align: center;
+    }
+
+    /* Фоновая цифровая сетка блокчейна */
+    .banner-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        linear-gradient(rgba(0, 86, 179, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 86, 179, 0.04) 1px, transparent 1px);
+      background-size: 25px 25px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Текстовая часть */
+    .banner-text {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+    }
+
+    .brand-tag {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #007bff;
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+    }
+
+    /* Главный фокус теперь на Прогнозном анализе */
+    .main-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffc107;
+      line-height: 1.2;
+      margin: 0 0 10px 0;
+      text-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+    }
+
+    .main-title span {
+      color: #ffffff;
+      font-size: 26px;
+      font-weight: 700;
+      display: block;
+      margin-top: 5px;
+      text-shadow: none;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #a0a0b0;
+      line-height: 1.4;
+      margin: 0 auto 20px auto;
+      max-width: 90%;
+    }
+
+    /* Плашки с преимуществами */
+    .badges-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      color: #d1d1d6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .badge.price {
+      border-color: rgba(255, 193, 7, 0.4);
+      background: rgba(255, 193, 7, 0.05);
+      color: #ffc107;
+    }
+
+    /* Графическая часть (Радар + Щит) смещена вниз */
+    .banner-graphics {
+      position: relative;
+      z-index: 2;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    /* Неоновое свечение под щитом */
+    .shield-glow {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: #0056b3;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.4;
+      animation: pulseGlow 4s infinite ease-in-out;
+    }
+
+    /* Внешнее кольцо радара */
+    .radar-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px dashed rgba(0, 123, 255, 0.25);
+      border-radius: 50%;
+      animation: rotateRadar 20s linear infinite;
+    }
+
+    /* Сканирующий луч радара */
+    .radar-circle::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 50%; height: 50%;
+      background: conic-gradient(from 0deg, rgba(0, 123, 255, 0.15) 0%, transparent 70%);
+      transform-origin: left bottom;
+      border-radius: 0 100% 0 0;
+    }
+
+    /* Центральный ИИ-Щит */
+    .cyber-shield {
+      position: relative;
+      width: 80px;
+      height: 95px;
+      background: #0d0d13;
+      border: 2px solid #007bff;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4), inset 0 0 10px rgba(0, 123, 255, 0.2);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    /* Лазерная скан-линия внутри щита */
+    .cyber-shield::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, transparent, #ffc107, transparent);
+      box-shadow: 0 0 8px #ffc107;
+      animation: scanLine 2.5s infinite linear;
+    }
+
+    .shield-logo {
+      font-size: 20px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -1px;
+    }
+
+    .shield-status {
+      font-size: 7px;
+      color: #007bff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 3px;
+      font-weight: bold;
+    }
+
+    /* Анимации */
+    @keyframes rotateRadar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes scanLine {
+      0% { top: 0%; }
+      50% { top: 95%; }
+      100% { top: 0%; }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner-container">
+    <!-- Текстовый блок (акцент переставлен) -->
+    <div class="banner-text">
+      <div class="brand-tag">Capital Shield AI</div>
+      <h1 class="main-title">
+        Прогнозный анализ
+        <span>+ Полный ИИ-аудит</span>
+      </h1>
+      <p class="subtitle">
+        Узнайте точный срок стабильной работы проекта по Алгоритму 6.0, прежде чем он закроется вместе с вашими деньгами.
+      </p>
+      
+      <div class="badges-row">
+        <div class="badge">🔒 Алгоритм 6.0</div>
+        <div class="badge">🔮 Модуль 15</div>
+        <div class="badge price">📊 Всего $40</div>
+      </div>
+    </div>
+
+    <!-- Графика отцентрована снизу -->
+    <div class="banner-graphics">
+      <div class="shield-glow"></div>
+      <div class="radar-circle"></div>
+      <div class="cyber-shield">
+        <div class="shield-logo">CS</div>
+        <div class="shield-status">ИИ-Поиск</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
