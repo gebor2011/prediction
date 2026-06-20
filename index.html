@@ -1,223 +1,479 @@
-<!-- БАННЕР CAPITAL SHIELD AI — ЧАСТЬ 1 -->
-<div id="cs-isolated-hero">
-  <style>
-    #cs-isolated-hero {
-      position: relative !important;
-      width: 100% !important;
-      min-height: 380px !important;
-      background: radial-gradient(circle at 85% 50%, #0c1020 0%, #050508 100%) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      overflow: hidden !important;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
-      border-bottom: 2px solid #1a1a24 !important;
-      box-sizing: border-box !important;
-      padding: 30px 40px !important;
-      margin: 0 0 40px 0 !important;
-      z-index: 99999 !important;
-    }
-    #cs-isolated-hero::before {
-      content: '' !important;
-      position: absolute !important;
-      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-      background-image: 
-        linear-gradient(rgba(0, 123, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 123, 255, 0.04) 1px, transparent 1px) !important;
-      background-size: 25px 25px !important;
-      pointer-events: none !important;
-      z-index: 1 !important;
-    }
-    #cs-isolated-hero .cs-text-side {
-      position: relative !important;
-      z-index: 3 !important;
-      max-width: 60% !important;
-      text-align: left !important;
-    }
-    #cs-isolated-hero .cs-brand-tag {
-      font-size: 13px !important;
-      text-transform: uppercase !important;
-      letter-spacing: 5px !important;
-      color: #007bff !important;
-      font-weight: 800 !important;
-      margin-bottom: 12px !important;
-      text-shadow: 0 0 15px rgba(0, 123, 255, 0.5) !important;
-    }
-    #cs-isolated-hero .cs-main-title {
-      font-size: 38px !important;
-      font-weight: 800 !important;
-      color: #ffc107 !important;
-      line-height: 1.2 !important;
-      margin: 0 0 15px 0 !important;
-      text-shadow: 0 0 20px rgba(255, 193, 7, 0.2) !important;
-    }
-    #cs-isolated-hero .cs-main-title span {
-      color: #ffffff !important;
-      font-size: 28px !important;
-      font-weight: 700 !important;
-      display: block !important;
-      margin-top: 4px !important;
-      text-shadow: none !important;
-    }
-    #cs-isolated-hero .cs-subtitle {
-      font-size: 15px !important;
-      color: #a0a0b0 !important;
-      line-height: 1.4 !important;
-      margin: 0 0 25px 0 !important;
-    }
-    #cs-isolated-hero .cs-badges-row {
-      display: flex !important;
-      gap: 10px !important;
-      flex-wrap: wrap !important;
-    }
-    #cs-isolated-hero .cs-badge {
-      background: rgba(255, 255, 255, 0.03) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      padding: 6px 12px !important;
-      border-radius: 4px !important;
-      font-size: 10px !important;
-      color: #d1d1d6 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 1px !important;
-      font-weight: 600 !important;
-      display: inline-block !important;
-    }
-    #cs-isolated-hero .cs-badge.cs-price {
-      border-color: rgba(255, 193, 7, 0.4) !important;
-      background: rgba(255, 193, 7, 0.05) !important;
-      color: #ffc107 !important;
-    }
-      <!-- БАННЕР CAPITAL SHIELD AI — ЧАСТЬ 2 -->
-    #cs-isolated-hero .cs-graphics-side {
-      position: relative !important;
-      z-index: 2 !important;
-      width: 260px !important;
-      height: 260px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    #cs-isolated-hero .cs-shield-glow {
-      position: absolute !important;
-      width: 140px !important;
-      height: 140px !important;
-      background: #0056b3 !important;
-      border-radius: 50% !important;
-      filter: blur(50px) !important;
-      opacity: 0.4 !important;
-      animation: csPulseGlow 4s infinite ease-in-out !important;
-    }
-    #cs-isolated-hero .cs-radar-circle {
-      position: absolute !important;
-      width: 100% !important;
-      height: 100% !important;
-      border: 1px dashed rgba(0, 123, 255, 0.25) !important;
-      border-radius: 50% !important;
-      animation: csRotateRadar 20s linear infinite !important;
-      box-sizing: border-box !important;
-    }
-    #cs-isolated-hero .cs-radar-circle::after {
-      content: '' !important;
-      position: absolute !important;
-      top: 0 !important; left: 50% !important;
-      width: 50% !important; height: 50% !important;
-      background: conic-gradient(from 0deg, rgba(0, 123, 255, 0.15) 0%, transparent 70%) !important;
-      transform-origin: left bottom !important;
-      border-radius: 0 100% 0 0 !important;
-    }
-    #cs-isolated-hero .cs-cyber-shield {
-      position: relative !important;
-      width: 90px !important;
-      height: 105px !important;
-      background: #0d0d13 !important;
-      border: 2px solid #007bff !important;
-      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4), inset 0 0 10px rgba(0, 123, 255, 0.2) !important;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%) !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      z-index: 2 !important;
-    }
-    #cs-isolated-hero .cs-cyber-shield::before {
-      content: '' !important;
-      position: absolute !important;
-      width: 100% !important;
-      height: 3px !important;
-      background: linear-gradient(to right, transparent, #ffc107, transparent) !important;
-      box-shadow: 0 0 8px #ffc107 !important;
-      animation: csScanLine 2.5s infinite linear !important;
-    }
-    #cs-isolated-hero .cs-shield-logo {
-      font-size: 22px !important;
-      font-weight: 900 !important;
-      color: #ffffff !important;
-      letter-spacing: -1px !important;
-    }
-    #cs-isolated-hero .cs-shield-status {
-      font-size: 8px !important;
-      color: #007bff !important;
-      text-transform: uppercase !important;
-      letter-spacing: 2px !important;
-      margin-top: 3px !important;
-      font-weight: bold !important;
-    }
-    @keyframes csRotateRadar {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @keyframes csScanLine {
-      0% { top: 0%; }
-      50% { top: 95%; }
-      100% { top: 0%; }
-    }
-    @keyframes csPulseGlow {
-      0%, 100% { transform: scale(1); opacity: 0.3; }
-      50% { transform: scale(1.1); opacity: 0.5; }
-    }
-    @media (max-width: 768px) {
-      #cs-isolated-hero {
-        flex-direction: column !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 30px 20px !important;
-        gap: 30px !important;
-      }
-      #cs-isolated-hero .cs-text-side {
-        max-width: 100% !important;
-        text-align: center !important;
-      }
-      #cs-isolated-hero .cs-main-title { font-size: 28px !important; }
-      #cs-isolated-hero .cs-main-title span { font-size: 22px !important; }
-      #cs-isolated-hero .cs-badges-row { justify-content: center !important; }
-      #cs-isolated-hero .cs-graphics-side { width: 180px !important; height: 180px !important; }
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогнозный анализ проекта — Capital Shield AI</title>
+    <style>
+        /* Общие стили страницы */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #ffcc00;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+        .btn:hover {
+            background-color: #e6b800;
+        }
 
-  <!-- Текстовый блок баннера -->
-  <div class="cs-text-side">
-    <div class="cs-brand-tag">Capital Shield AI</div>
-    <h2 class="cs-main-title">
-      Прогнозный анализ
-      <span>+ Полный ИИ-аудит</span>
-    </h2>
-    <p class="cs-subtitle">
-      Узнайте точный срок стабильной работы проекта по Алгоритму 6.0, прежде чем он закроется вместе с вашими деньгами.
-    </p>
-    <div class="cs-badges-row">
-      <div class="cs-badge">🔒 Алгоритм 6.0</div>
-      <div class="cs-badge">🔮 Модуль 15</div>
-      <div class="cs-badge cs-price">📊 Всего $40</div>
-    </div>
-  </div>
+        /* Стили изолированного горизонтального баннера */
+        #cs-isolated-hero {
+            position: relative !important;
+            width: 100% !important;
+            min-height: 340px !important;
+            background: radial-gradient(circle at 85% 50%, #0c1020 0%, #050508 100%) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            overflow: hidden !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            border-bottom: 2px solid #1a1a24 !important;
+            box-sizing: border-box !important;
+            padding: 30px 40px !important;
+            margin: 0 0 30px 0 !important;
+            z-index: 99999 !important;
+        }
+        #cs-isolated-hero::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+            background-image: 
+                linear-gradient(rgba(0, 123, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 123, 255, 0.04) 1px, transparent 1px) !important;
+            background-size: 25px 25px !important;
+            pointer-events: none !important;
+            z-index: 1 !important;
+        }
+        #cs-isolated-hero .cs-text-side {
+            position: relative !important;
+            z-index: 3 !important;
+            max-width: 60% !important;
+            text-align: left !important;
+        }
+        #cs-isolated-hero .cs-brand-tag {
+            font-size: 13px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 5px !important;
+            color: #007bff !important;
+            font-weight: 800 !important;
+            margin-bottom: 12px !important;
+            text-shadow: 0 0 15px rgba(0, 123, 255, 0.5) !important;
+        }
+        #cs-isolated-hero .cs-main-title {
+            font-size: 34px !important;
+            font-weight: 800 !important;
+            color: #ffc107 !important;
+            line-height: 1.2 !important;
+            margin: 0 0 15px 0 !important;
+            text-shadow: 0 0 20px rgba(255, 193, 7, 0.2) !important;
+        }
+        #cs-isolated-hero .cs-main-title span {
+            color: #ffffff !important;
+            font-size: 24px !important;
+            font-weight: 700 !important;
+            display: block !important;
+            margin-top: 4px !important;
+            text-shadow: none !important;
+        }
+        #cs-isolated-hero .cs-subtitle {
+            font-size: 14px !important;
+            color: #a0a0b0 !important;
+            line-height: 1.4 !important;
+            margin: 0 0 20px 0 !important;
+        }
+        #cs-isolated-hero .cs-badges-row {
+            display: flex !important;
+            gap: 10px !important;
+            flex-wrap: wrap !important;
+        }
+        #cs-isolated-hero .cs-badge {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 6px 12px !important;
+            border-radius: 4px !important;
+            font-size: 10px !important;
+            color: #d1d1d6 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            font-weight: 600 !important;
+            display: inline-block !important;
+        }
+        #cs-isolated-hero .cs-badge.cs-price {
+            border-color: rgba(255, 193, 7, 0.4) !important;
+            background: rgba(255, 193, 7, 0.05) !important;
+            color: #ffc107 !important;
+        }
+      <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 2 -->
+        #cs-isolated-hero .cs-graphics-side {
+            position: relative !important;
+            z-index: 2 !important;
+            width: 240px !important;
+            height: 240px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        #cs-isolated-hero .cs-shield-glow {
+            position: absolute !important;
+            width: 120px !important;
+            height: 120px !important;
+            background: #0056b3 !important;
+            border-radius: 50% !important;
+            filter: blur(40px) !important;
+            opacity: 0.4 !important;
+            animation: csPulseGlow 4s infinite ease-in-out !important;
+        }
+        #cs-isolated-hero .cs-radar-circle {
+            position: absolute !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: 1px dashed rgba(0, 123, 255, 0.25) !important;
+            border-radius: 50% !important;
+            animation: csRotateRadar 20s linear infinite !important;
+            box-sizing: border-box !important;
+        }
+        #cs-isolated-hero .cs-radar-circle::after {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important; left: 50% !important;
+            width: 50% !important; height: 50% !important;
+            background: conic-gradient(from 0deg, rgba(0, 123, 255, 0.15) 0%, transparent 70%) !important;
+            transform-origin: left bottom !important;
+            border-radius: 0 100% 0 0 !important;
+        }
+        #cs-isolated-hero .cs-cyber-shield {
+            position: relative !important;
+            width: 80px !important;
+            height: 95px !important;
+            background: #0d0d13 !important;
+            border: 2px solid #007bff !important;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.4), inset 0 0 10px rgba(0, 123, 255, 0.2) !important;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 2 !important;
+        }
+        #cs-isolated-hero .cs-cyber-shield::before {
+            content: '' !important;
+            position: absolute !important;
+            width: 100% !important;
+            height: 3px !important;
+            background: linear-gradient(to right, transparent, #ffc107, transparent) !important;
+            box-shadow: 0 0 8px #ffc107 !important;
+            animation: csScanLine 2.5s infinite linear !important;
+        }
+        #cs-isolated-hero .cs-shield-logo {
+            font-size: 20px !important;
+            font-weight: 900 !important;
+            color: #ffffff !important;
+            letter-spacing: -1px !important;
+        }
+        #cs-isolated-hero .cs-shield-status {
+            font-size: 7px !important;
+            color: #007bff !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            margin-top: 3px !important;
+            font-weight: bold !important;
+        }
+        @keyframes csRotateRadar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes csScanLine {
+            0% { top: 0%; }
+            50% { top: 95%; }
+            100% { top: 0%; }
+        }
+        @keyframes csPulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+        @media (max-width: 768px) {
+            #cs-isolated-hero {
+                flex-direction: column !important;
+                justify-content: center !important;
+                text-align: center !important;
+                padding: 25px 20px !important;
+                gap: 25px !important;
+            }
+            #cs-isolated-hero .cs-text-side {
+                max-width: 100% !important;
+                text-align: center !important;
+            }
+            #cs-isolated-hero .cs-main-title { font-size: 26px !important; }
+            #cs-isolated-hero .cs-main-title span { font-size: 20px !important; }
+            #cs-isolated-hero .cs-badges-row { justify-content: center !important; }
+            #cs-isolated-hero .cs-graphics-side { width: 160px !important; height: 160px !important; }
+        }
 
-  <!-- Графический блок баннера -->
-  <div class="cs-graphics-side">
-    <div class="cs-shield-glow"></div>
-    <div class="cs-radar-circle"></div>
-    <div class="cs-cyber-shield">
-      <div class="cs-shield-logo">CS</div>
-      <div class="cs-shield-status">ИИ-Поиск</div>
+        /* Красивые и четкие стили формы заказа */
+        .shield-order-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+        .shield-order-form h3 {
+            text-align: center;
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .form-notice {
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #cccccc;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #0056b3;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background: #004085;
+        }
+        .disclaimer-box {
+            background-color: #1a1a1a;
+            border-left: 4px solid #ffcc00;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Интерактивный горизонтальный баннер Capital Shield AI -->
+    <div id="cs-isolated-hero">
+        <div class="cs-text-side">
+            <div class="cs-brand-tag">Capital Shield AI</div>
+            <h1 class="cs-main-title">
+                Прогнозный анализ
+                <span>+ Полный ИИ-аудит</span>
+            </h1>
+            <p class="cs-subtitle">
+                Узнайте точный срок стабильной работы проекта по Алгоритму 6.0, прежде чем он закроется вместе с вашими деньгами.
+            </p>
+            <div class="cs-badges-row">
+                <div class="cs-badge">🔒 Алгоритм 6.0</div>
+                <div class="cs-badge">🔮 Модуль 15</div>
+                <div class="cs-badge cs-price">📊 Всего $40</div>
+            </div>
+        </div>
+        <div class="cs-graphics-side">
+            <div class="cs-shield-glow"></div>
+            <div class="cs-radar-circle"></div>
+            <div class="cs-cyber-shield">
+                <div class="cs-shield-logo">CS</div>
+                <div class="cs-shield-status">ИИ-Поиск</div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 3 -->
+    <div class="container">
+        
+        <!-- Обязательный вводный дисклеймер компании -->
+        <div class="disclaimer-box">
+            <strong>⚠️ Важно перед прочтением:</strong><br>
+            Настоящий аналитический отчёт не касается личностей — авторов, владельцев и лидеров проекта. Мы анализируем исключительно проект: бизнес-модель, смарт-контракт, математику, юридическую структуру и репутацию в сети. Персоналии — отдельный разговор. Наши комментарии могут содержать долю здорового скептицизма.<br>
+            <em>— Capital Shield AI</em>
+        </div>
+
+        <section>
+            <h2>Узнайте точный срок жизни проекта, прежде чем он закроется вместе с вашими деньгами</h2>
+            <p><strong>Слоган:</strong> «Узнайте, сколько вам осталось заработать и когда выходить»</p>
+            <p>Защитите свой капитал и репутацию. Наш алгоритм проводит глубокое исследование любой инвестиционной платформы и рассчитывает «Таймлайн безопасности» — математически обоснованную дату, когда нужно экстренно забрать депозит.</p>
+            <p><strong>Фиксированная цена:</strong> $40 <em>(Один заказ спасает капитал от $50 до $1000+)</em></p>
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h2>Почему классический аудит бесполезен и зачем нужен прогноз?</h2>
+            <p>Обычные технические проверки ищут уязвимости в коде. Но они молчат о главном. Проект может иметь идеальный код, одобренный топовыми агентствами, но при этом быть скрытой финансовой пирамидой, идущей к неизбежному кассовому разрыву.</p>
+            
+            <div style="background: #1e1e1e; padding: 20px; border-radius: 5px; margin-top: 20px; text-align: left;">
+                <p><strong>Что дает Прогнозный анализ от Capital Shield AI:</strong></p>
+                <ul>
+                    <li style="margin-bottom: 10px;"><strong>Точный Таймлайн безопасности:</strong> ИИ моделирует 3 сценария поведения кассы (оптимистичный, реалистичный и стрессовый) и вычисляет конкретный коридор дней, в течение которого платформа физически способна выполнять обязательства. Вы будете знать, успеет ли ваш депозит отбиться.</li>
+                    <li style="margin-bottom: 10px;"><strong>Очищенный расчет доходности:</strong> Алгоритм находит скрытые в смарт-контракте или оферте админские комиссии и списания. Вы увидите свою реальную чистую прибыль, а не рисованные цифры в личном кабинете.</li>
+                    <li><strong>Стратегия вывода активов:</strong> Четкий пошаговый план действий, разработанный под ваш баланс — когда начинать вывод прибыли, в какой день забирать тело депозита и при каких ончейн-маркерах нужно немедленно эвакуировать капитал.</li>
+                </ul>
+            </div>
+        </section>
+        <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 4 -->
+        <section style="margin-top: 40px;">
+            <h2>Фундамент прогноза — Алгоритм 6.0</h2>
+            <p>Цена в $40 фиксирована и обоснована глубоким аналитическим процессом. Чтобы выдать вам точные сроки и стратегию выхода, Capital Shield AI проводит тотальную цифровую разведку по 14 модулям безопасности.</p>
+            
+            <div style="background: #1e1e1e; padding: 20px; border-radius: 5px; text-align: left; margin-top: 20px;">
+                <p><strong>Что входит в основную проверку под капотом ИИ:</strong></p>
+                <ul>
+                    <li style="margin-bottom: 8px;"><strong>OSINT и Цифровой след:</strong> Проверка возраста домена по Whois, истории смены легенд через веб-архивы и связей админов с прошлыми закрывшимися проектами.</li>
+                    <li style="margin-bottom: 8px;"><strong>Юридический и Социальный рентген:</strong> Поиск скрытых ловушек в оферте (право заморозить счет). Вычисление реального комьюнити и замер скорости бана в чатах за неудобные вопросы.</li>
+                    <li style="margin-bottom: 8px;"><strong>Денежная криминалистика:</strong> Жесткий тест FTC на пирамидальность, блокчейн-трекинг транзакций и выявление переводов через миксеры (Tornado Cash).</li>
+                    <li><strong>Индикаторы эндшпиля:</strong> ИИ сверяет поведение платформы с математической кривой закрытия (затягивание выплат, урезание лимитов, внезапные сверхагрессивные акции).</li>
+                </ul>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px dashed #444; padding: 15px; border-radius: 5px; margin-top: 20px; text-align: left;">
+                <p><strong>Три железных правила Capital Shield AI:</strong></p>
+                <ol>
+                    <li><strong>Никакой воды и общих фраз:</strong> Вы получаете сухие, бескомпромиссные математические факты.</li>
+                    <li><strong>Факты против легенды:</strong> Каждый отчет строится на жестком техническом противоречии обещаний админов и реальности.</li>
+                    <li><strong>Бескомпромиссный вердикт:</strong> Проекту присваивается один из 5 цветовых статусных маркеров (🔴 / 🟠 / 🟡 / 🟢 / 🔵). При обнаружении критического скама платформа вносится в черный список.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Блок формы заказа со всеми 11 полями Google-формы Михалыча -->
+        <div class="shield-order-form" style="margin-top: 50px;">
+            <h3>📊 ЗАКАЗАТЬ ПРОГНОЗНЫЙ АНАЛИЗ</h3>
+            <div class="form-notice">
+                Потратьте $40 сейчас, чтобы не потерять тысячи завтра. Заполните данные, и ИИ запустит Алгоритм 6.0 для вашего проекта. Отчёт будет направлен вам в PDF.
+            </div>
+            
+            <form action="https://formspree.io" method="POST">
+                
+                <div class="form-group">
+                    <label>1. Название проекта *</label>
+                    <input type="text" name="project_name" required placeholder="Введите название инвестиционной платформы">
+                </div>
+                
+                <div class="form-group">
+                    <label>2. Ссылка на сайт проекта *</label>
+                    <input type="url" name="project_website" required placeholder="https://...">
+                </div>
+                
+                <div class="form-group">
+                    <label>3. Ссылка на Telegram-чат/канал проекта *</label>
+                    <input type="text" name="project_tg_link" required placeholder="https://t.me...">
+                </div>
+                
+                <div class="form-group">
+                    <label>4. Сумма вашего депозита (в USD) *</label>
+                    <input type="number" name="deposit_amount" required placeholder="Например: 500">
+                </div>
+                
+                <div class="form-group">
+                    <label>5. Обещанная доходность (%) *</label>
+                    <input type="text" name="promised_yield" required placeholder="Например: 1% в день / 20% в месяц">
+                </div>
+                <!-- КУСОК САЙТА CAPITAL SHIELD AI — ЧАСТЬ 5 -->
+                <div class="form-group">
+                    <label>6. Сколько времени проект уже работает? *</label>
+                    <input type="text" name="project_age_by_user" required placeholder="Например: неделю, 3 месяца, только предстарт">
+                </div>
+                
+                <div class="form-group">
+                    <label>7. Адрес смарт-контракта (если есть / опционально)</label>
+                    <input type="text" name="smart_contract_address" placeholder="0x...">
+                </div>
+                
+                <div class="form-group">
+                    <label>8. Ссылка на презентацию / Whitepaper (если есть)</label>
+                    <input type="text" name="whitepaper_link" placeholder="Ссылка на PDF или презентацию">
+                </div>
+                
+                <div class="form-group">
+                    <label>9. Что именно вызывает у вас сомнения в проекте? *</label>
+                    <textarea name="user_doubts" rows="3" required placeholder="Например: задержки выплат, слишком высокие проценты, админы молчат"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>10. Ваш личный Telegram для связи и отправки отчёта *</label>
+                    <input type="text" name="client_telegram" required placeholder="Например: @username_crypto">
+                </div>
+                
+                <div class="form-group">
+                    <label>11. Ваш Email для связи *</label>
+                    <input type="email" name="client_email" required placeholder="mail@example.com">
+                </div>
+                
+                <button type="submit" class="submit-btn">Запустить прогнозный анализ капитала</button>
+            </form>
+        </div>
+
+        <!-- Закрывающий обязательный дисклеймер компании -->
+        <div class="disclaimer-box" style="margin-top: 40px; border-left-color: #333;">
+            <small style="color: #888;">
+                Настоящий аналитический отчёт не касается личностей — авторов, владельцев и лидеров проекта. Мы анализируем исключительно проект: бизнес-модель, смарт-контракт, математику, юридическую структуру и репутацию в сети. Персоналии — отдельный разговор. Наши комментарии могут содержать долю здорового скептицизма.<br>
+                <strong>Capital Shield AI, 2026.</strong>
+            </small>
+        </div>
+
+        <!-- Подвал сайта -->
+        <footer style="margin-top: 50px; padding: 20px 0; border-top: 1px solid #222; text-align: center; color: #666; font-size: 14px;">
+            <p><strong>Проверь проект прежде, чем вложить доллар или пригласить друга.</strong></p>
+            <p>Официальный канал: <a href="https://t.me" style="color: #007bff; text-decoration: none;">t.me/capitalshield_ai</a></p>
+        </footer>
+
+    </div> <!-- Конец .container -->
+
+</body>
+</html>
